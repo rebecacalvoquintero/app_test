@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
-import LoginForm from './src/components/LoginForm';
+import { AppRegistry } from 'react-native';
 
 // Component imports
 // import { Header } from './src/components/common';

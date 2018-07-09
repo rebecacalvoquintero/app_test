@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text } from 'react-native';
 //import axios from 'axios';
-import TransactionsSummary from './TransactionsSummary';
 import summaryData from './summary_data';
+import TransactionDetail from './TransactionDetail';
 
 class TransactionList extends Component {
-
-  state = { transactions: [] };
 
   componentWillMount() {
     // axios.get('') // Get JSON for /summary/(user_ID)
@@ -14,15 +12,18 @@ class TransactionList extends Component {
   }
 
   renderTransactions() {
-    // return this.state.summaryData.transactions.map(transaction =>
-    //   <TransactionDetail key={transaction.title} transaction={transaction} />
-    // );
+    return summaryData.Summary.transactions.map(transaction =>
+      <TransactionDetail key={transaction.transaction_id} transaction={transaction} />
+    );
   }
 
   render() {
     return (
         <View>
-          <Text>{summaryData.Summary.balance.account_type}</Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
+            Balance: {summaryData.Summary.balance.balance}
+          </Text>
+          {this.renderTransactions()}
         </View>
     );
   }
