@@ -21,7 +21,7 @@ class TransactionList extends Component {
     return (
         <View>
           <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
-            Balance: {summaryData.Summary.balance.balance}
+            Balance: £{summaryData.Summary.balance.balance}
           </Text>
           {this.renderTransactions()}
         </View>
